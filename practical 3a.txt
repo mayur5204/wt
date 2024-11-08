@@ -1,0 +1,18 @@
+C:\Users\HP>git init
+Initialized empty Git repository in C:/Users/HP/.git/
+
+C:\Users\HP>cd Downloads
+
+C:\Users\HP\Downloads>cd project
+
+C:\Users\HP\Downloads\project>git add .
+
+C:\Users\HP\Downloads\project>git commit -m "second commit"
+
+C:\Users\HP\Downloads\project>git branch -M main
+
+C:\Users\HP\Downloads\project>git remote add origin https://github.com/AdityaJare/practical3a.git
+
+
+C:\Users\HP\Downloads\project>git push -u origin main
+.

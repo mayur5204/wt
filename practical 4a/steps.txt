@@ -1,0 +1,41 @@
+
+in document --> in practical folder::
+--> npm init
+
+fill info
+package file will installed.
+create index.js in vscode.
+
+--> npm install express --save
+after installation node_module folder created
+in index.js::
+{
+const express=require('express');
+const app=express();
+
+app.use(express.static('public'))
+
+app.listen(4000, ()=>{
+console.log("Server is started")
+})
+{
+
+create "public" folder->create "index.html"
+do any html code
+
+in terminal --> node index.js
+
+in browser --> localhost:4000
+
+
+
+
+
+
+
+
+
+
+
+
+

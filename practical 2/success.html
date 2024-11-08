@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Registration Successful!</h2>
+    <p>Thank you for registering. Here are your details:</p>
+    <ul id="userData"></ul> 
+
+    <script>
+       
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let lastUser = users[users.length - 1];
+
+        let userDataList = document.getElementById('userData');
+        if (lastUser) {
+            userDataList.innerHTML = `
+                <li><strong>Name:</strong> ${lastUser.name}</li>
+                <li><strong>Email:</strong> ${lastUser.email}</li>
+                <li><strong>Password:</strong> ${lastUser.password}</li>
+            `;
+        } else {
+            userDataList.textContent = 'No user data found.';
+        }
+    </script>
+</body>
+</html>

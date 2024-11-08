@@ -1,0 +1,37 @@
+downloads docker
+
+in cmd-->{
+
+docker -v
+docker ps
+
+}
+
+on browser search docker hub
+search OpenJDK
+copy link
+in cmd{
+paste link
+docker image
+docker images
+docker run --name
+docker run --name JAVA -it -d openjdk
+docker exec -it JAVA jshell
+
+for stop running docker -->
+docker ps
+/exit
+docker ps
+docker stop e02e5c3a9daa
+
+docker container rm e02e5c3a9daa
+docker ps
+
+availavle images
+docker images
+
+removing images
+docker image prune
+
+
+}

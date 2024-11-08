@@ -1,0 +1,77 @@
+--> npm init
+
+create index.js{
+
+const dbConnect = require('./mongodb');
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+
+app.get('/', async (req, res) => {
+    let result = await dbConnect();
+    result = await result.find().toArray();
+    res.send(result);
+});
+
+
+app.post('/insertData', async (req, res) => {
+    let result = await dbConnect();
+    result = await result.insertOne(req.body);
+    res.send("Data Inserted Successfully");
+});
+
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+});
+
+app.put('/updateData/:name', async (req, res) =>{
+
+        let result=await dbConnect();
+        result=await result.updateOne({name:req.params.name},{$set:req.body})
+        res.send("Data is Updated Successfully")
+
+})
+
+app.delete('/deleteData/:name',async(req,res)=>{
+
+    let result=await dbConnect();
+    result=await result.deleteOne({name:req.params.name})
+    res.send("Data Deleted Successfully");
+
+})
+
+}
+
+download mongodbcompass
+
+in mongo
+create collection
+in mongo bash
+{
+use student
+db.createCollection('profile')
+db.profile.insertone({name;"Aditya", email:"adinjskdb"})
+
+create mongodb.js{
+const { MongoClient } = require('mongodb');
+const url = "mongodb://localhost:27017";
+const database = 'student';
+const client = new MongoClient(url);
+
+const dbConnect = async () => {
+    const result = await client.connect(); // Connect to MongoDB
+    const db = await result.db(database);  // Select the database
+    return db.collection('profile');       // Access the "profile" collection
+}
+
+module.exports = dbConnect;
+
+}
+npm install mongodb
+npm install express
+
+download postman from browser
+install it
